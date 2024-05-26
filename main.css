@@ -1,0 +1,219 @@
+#section-bar {
+    height: 34px;
+    width: 100%;
+    background-color: #C6E4A1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#section-bar span {
+    display: inline-block;
+    font-size: 16px;
+    /* Optional: adjust the font size */
+    font-weight: bold;
+    /* Optional: adjust the font weight */
+}
+
+
+/* Banner Section  */
+
+#Banner {
+    height: calc(100vh - 34px);
+    background: url(img/Hero\ picture.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: grey;
+    width: 100%;
+    position: relative;
+    padding-top: 34px;
+}
+
+.banner-image {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 194px;
+    height: 139.15px;
+}
+
+.banner-title {
+    position: absolute;
+    top: 40%;
+    left: 2%;
+    width: 579px;
+    height: 149px;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: bold;
+    font-size: 3.5rem;
+    color: #5E9FCE;
+}
+
+.banner-subtitle {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    width: 321px;
+    height: 28px;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: bold;
+    color: #C5E3A0;
+}
+
+.banner-button {
+    position: absolute;
+    top: 55%;
+    left: 3%;
+    width: 150px;
+    height: 40px;
+    background-color: #5E9FCE;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: bold;
+}
+
+
+/* Group 1 */
+
+#group-1 {
+    background: black;
+}
+
+#group-1 .group-1-text h2 {
+    color: #C6E4A1;
+}
+
+#group-1 h2 {
+    color: #C6E4A1;
+    font-size: 2rem;
+}
+
+#group-1 .group-1-text h3 {
+    color: white;
+}
+
+#group-1 .group-1-text h5 {
+    color: #C6E4A1;
+}
+
+#group-1 .group-1-text p {
+    color: white;
+}
+
+
+/* Group 2 */
+
+#group-2 {
+    background: black;
+}
+
+#group-2 .group-2-text h2 {
+    color: #C6E4A1;
+}
+
+#group-2 .group-2-text p {
+    color: white;
+}
+
+
+/* Symptoms */
+
+#symptoms {
+    background: black;
+}
+
+#Image {
+    background: black;
+}
+
+#symptoms .symptoms-heading {
+    border-radius: 20px;
+    height: 80px;
+}
+
+#Image .symptoms-heading {
+    border-radius: 20px;
+    height: 80px;
+}
+
+.underline {
+    background: #C6E4A1;
+    height: 5px;
+    width: 60px;
+    margin-top: -8px;
+}
+
+#center {
+    background: black;
+}
+
+
+/* Form */
+
+.form-section {
+    background-color: #333333;
+    /* Dark background for the form section */
+    color: #ffffff;
+    /* White text for the form section */
+}
+
+.form-heading {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Public Sans', sans-serif;
+}
+
+.form-group label {
+    color: #ffffff;
+    /* Ensure labels are white */
+}
+
+.form-control {
+    background-color: #444444;
+    /* Dark background for form controls */
+    color: #ffffff;
+    /* White text for form controls */
+    border: 1px solid #555555;
+    /* Border color for form controls */
+}
+
+.form-control::placeholder {
+    color: #cccccc;
+    /* Placeholder color for form controls */
+}
+
+.btn-primary {
+    background-color: #5E9FCE;
+    /* Button background color */
+    border-color: #5E9FCE;
+    /* Button border color */
+}
+
+.btn-primary:hover {
+    background-color: #4A88B2;
+    /* Button background color on hover */
+    border-color: #4A88B2;
+    /* Button border color on hover */
+}
+
+#footer {
+    background: #C6E4A1;
+}
+
+#footer .text-bold {
+    font-weight: bolder;
+    margin: 0;
+}
+
+#footer p {
+    margin-top: -2px;
+}
+
+#footer .email {
+    margin-top: -15px;
+}
