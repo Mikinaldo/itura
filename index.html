@@ -57,7 +57,7 @@
                 <div class="col-10 col-md-4">
                     <img src="img/3rd picture.jpg" alt="" class="img-fluid">
                 </div>
-                <div class="col-10 col-md-8">
+                <div class="col-10 col-md-8 mt-3">
                     <div class="group-2-text">
                         <h2 class="text-center">What is an Enlarged Postrate</h2>
                         <p class="">A man's prostate gland usually starts to enlarge after he reaches 40 years of age. This condition is called benign prostatic hyperplasia (BPH). The condition has also been referred to as benign prostatic hypertrophy.The prostate
@@ -191,7 +191,7 @@
         <div class="container">
             <div class="p-4 rounded">
                 <h1 class="form-heading" style="font-size: 1.8rem;">If you would like to order one of our naturally crafted products, please fill this form.</h1>
-                <form action="mailto:Icicapita@gmail.com" method="post" enctype="text/plain">
+                <form id="orderForm" action="mailto:Icicapita@gmail.com" method="post" enctype="text/plain">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -235,7 +235,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" onclick="submitForm()">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -250,6 +250,8 @@
         </div>
     </section>
 
+
+    <!-- Footer Section -->
     <footer class="footer pt-5" id="footer">
         <div class="container">
             <div class="row justify-content-center align-items-center text-center">
@@ -275,6 +277,18 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        function submitForm() {
+            var form = document.getElementById("orderForm");
+            if (form.checkValidity()) {
+                alert("Your form has been submitted!");
+                form.reset();
+            } else {
+                alert("Please fill in all required fields.");
+            }
+        }
+    </script>
 </body>
 
 </html>
