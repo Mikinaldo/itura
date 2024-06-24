@@ -187,59 +187,60 @@
     </div>
 
     <!-- Form Section -->
-    <section class="form-section">
-        <div class="container">
-            <div class="p-4 rounded">
-                <h1 class="form-heading" style="font-size: 1.8rem;">If you would like to order one of our naturally crafted products, please fill this form.</h1>
-                <form id="orderForm" action="mailto:iturawellness.ng@gmail.com" method="post" enctype="text/plain">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="fullName">Full Name</label>
-                                <input type="text" class="form-control" id="fullName" name="fullName" required>
+     <section id="form-section">
+        <h1 class="form-heading font-weight-bold my-5" style="font-size: 1.8rem; color: #5E9FCE;">FILL THIS FORM TO ORDER NOW!!!</h1>
+        <div class="form-section py-3">
+            <div class="container">
+                <div class="p-4 rounded">
+                    <form id="orderForm" onsubmit="sendEmail(event)">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" class="form-control" id="fullName" name="fullName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phoneNumber">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" required>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phoneNumber">Phone Number</label>
-                                <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="address">Detailed Address</label>
+                                    <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productType">Select Product Type</label>
+                                    <select class="form-control" id="productType" name="productType" required>
+                                        <option value="">Choose...</option>
+                                        <option value="starter_pack">STARTER PACK N25,000</option>
+                                        <option value="mini_combo">MINI COMBO N45,000</option>
+                                        <option value="premium_pack">PREMIUM PACK N65,000</option>
+                                        <option value="itura_detor">ITURA DETOR N13,000</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="deliveryType">Select Delivery Type</label>
+                                    <select class="form-control" id="deliveryType" name="deliveryType" required>
+                                        <option value="">Choose...</option>
+                                        <option value="immediately_today">IMMEDIATELY TODAY</option>
+                                        <option value="tomorrow">TOMORROW</option>
+                                        <option value="next_tomorrow">NEXT TOMORROW</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="address">Detailed Address</label>
-                                <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="productType">Select Product Type</label>
-                                <select class="form-control" id="productType" name="productType" required>
-                    <option value="">Choose...</option>
-                    <option value="starter_pack">STARTER PACK N25,000</option>
-                    <option value="mini_combo">MINI COMBO N45,000</option>
-                    <option value="premium_pack">PREMIUM PACK N65,000</option>
-                    <option value="itura_detor">ITURA DETOR N13,000</option>
-                  </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="deliveryType">Select Delivery Type</label>
-                                <select class="form-control" id="deliveryType" name="deliveryType" required>
-                    <option value="">Choose...</option>
-                    <option value="immediately_today">IMMEDIATELY TODAY</option>
-                    <option value="tomorrow">TOMORROW</option>
-                    <option value="next_tomorrow">NEXT TOMORROW</option>
-                  </select>
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary font-weight-bold">Submit</button>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <button type="submit" class="btn btn-primary" onclick="submitForm()">Submit</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+                    </form>
+                </div>
             <div class="whatsapp py-5">
                 <h3 class="text-center" style="font-size: 2rem; color: #C6E4A1;">METHOD 2</h3>
                 <h5 class="text-center" style="font-size: 1rem;">CLICK ON THE WHATSAPP IMAGE BELOW TO MAKE A QUICK ORDER</h5>
@@ -278,16 +279,35 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom JavaScript -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        function submitForm() {
-            var form = document.getElementById("orderForm");
-            if (form.checkValidity()) {
-                alert("Your form has been submitted!");
-                form.reset();
-            } else {
-                alert("Please fill in all required fields.");
-            }
+        (function() {
+            emailjs.init("l6TvfsyfkBC9eeTyL");
+        })();
+
+        function sendEmail(event) {
+            event.preventDefault();
+
+            var templateParams = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phoneNumber: document.getElementById('phoneNumber').value,
+                address: document.getElementById('address').value,
+                productType: document.getElementById('productType').value,
+                deliveryType: document.getElementById('deliveryType').value,
+            };
+
+            emailjs.send("service_wmlxzea", "template_fng5c2q", templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Order submitted successfully!');
+                    document.getElementById('orderForm').reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Failed to submit order. Please try again.');
+                });
         }
+    </script>
     </script>
 </body>
 
